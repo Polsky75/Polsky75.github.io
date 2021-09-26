@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+      <title id="str">Диктанты</title>
+    </head>
+    <body>
+      <p> Введите слова через запятую: </p>
+      <p>
+      <textarea id="message">Текст</textarea>
+      </p>
+      <select id="language">
+        <option> Русский </option>
+        <option> English </option>
+      </select>
+      <select id="delay">
+        <option> 1 сек </option>
+        <option> 2 сек </option>
+        <option> 5 сек </option>
+        <option> 10 сек </option>
+        <option> 30 сек </option>
+        <option> 1 мин </option>
+      </select>
+      <button id = "speak">Прослушать</button>
+      <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+      <script>
+/*
+      <style>
+        p {
+          color: blue;
+        }
+        textarea {
+          color: blue;
+          background: aqua;
+          border-color: blue;
+        }
+        button {
+          color: blue;v
+          background: aqua;
+          border-color: blue;
+        }
+        select {
+          color: blue;
+          background: aqua;
+          border-color: blue;
+        }
+        body {
+          background: aqua;
+        }
+      </style>
+*/
+var delay = 1000
+function randomMassive(a, b){
+  return Math.floor(Math.random()*2)-0.5
+}
+function speak(text){
+  text1 = text.split(', ')
+  text1 = text1.sort(randomMassive)
+  var i = -1
+var intervalId = setInterval(function(){
+  i += 1
+  const message = new SpeechSynthesisUtterance()
+  if (seLan.value == 'English'){
+    message.lang = "en-En"
+  }else{
+    message.lang = "ru-Ru"
+  }
+  if (seDel.value == '1 сек'){
+    delay = 1000
+  }else if (seDel.value == '2 сек'){
+    delay = 2000
+  }else if (seDel.value == '5 сек'){
+    delay = 5000
+  }else if (seDel.value == '10 сек'){
+    delay = 10000
+  }else if (seDel.value == '30 сек'){
+    delay = 30000
+  }else{
+    delay = 60000
+  }
+    message.text = text1[i]
+    if (i>= text1.length - 1 || message == undefined){
+      i = 0
+      clearInterval(intervalId)
+    }
+    window.speechSynthesis.speak(message)
+  },delay)
+}
+const btnSpeak = document.querySelector("#speak")
+const txtMessage = document.querySelector("#message")
+const seLan = document.querySelector("#language")
+const seDel = document.querySelector("#delay")
+
+btnSpeak.addEventListener("click",() => {
+  speak(txtMessage.value)
+})
+//Играть, отчаяться, прибыть, медведь, сыт, поступок
+//Усиливаться, жители, объявлять, чрезвычайное положение, эвакуировать, центр урагана, ниже уровня моря, выходить на берег, дамба, штормовой вихрь, сносить, мародёрство, жестокость, спасательные сервисы, затрудняться помочь, армия, отчаявшийся, военные инженеры, выкачивать, медленное восстановление, отстраивать
+//Play, despair, arrive, bear, full, act
+         </script>
+
+  </body></html>

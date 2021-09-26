@@ -83,7 +83,8 @@ var intervalId = setInterval(function(){
       i = 0
       clearInterval(intervalId)
     }
-    window.speechSynthesis.speak(message)
+    var ssu = new SpeechSynthesisUtterance(message);
+    window.speechSynthesis.speak(ssu)
   },delay)
 }
 const btnSpeak = document.querySelector("#speak")

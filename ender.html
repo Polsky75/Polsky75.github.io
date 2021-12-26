@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+      <title id="str">Ender language</title>
+    </head>
+    <body>
+      <p> Enter text: </p>
+      <p>
+      <textarea id="message">Text</textarea>
+      </p>
+      <button id = "translate">Translate</button>
+      <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+      <script>
+/*
+      <style>
+        p {
+          color: blue;
+        }
+        textarea {
+          color: blue;
+          background: aqua;
+          border-color: blue;
+        }
+        button {
+          color: blue;v
+          background: aqua;
+          border-color: blue;
+        }
+        select {
+          color: blue;
+          background: aqua;
+          border-color: blue;
+        }
+        body {
+          background: aqua;
+        }
+      </style>
+*/
+function translate(text){
+  var text1 = text.toLowerCase()
+  var linker = false
+  var english = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+  var ender = ['⏃','⏚','☊','⎅','⟒','⎎','☌','⊑','⟟','⟊','☍','⌰','⋔','⋏','⍜','⌿','⍾','⍀','⌇','⏁','⎍','⎐','⍙','⌖','⊬','⋉']
+  txtMessage.value = null
+  for (var i = 0; i < text1.length; i++) {
+    for (var j = 0; j < 26; j++) {
+      if (text1[i] == english[j]){
+        txtMessage.value += ender[j]
+        linker = true
+      }
+    }
+    if (linker == false){
+      txtMessage.value += text[i]
+    }
+    linker = false
+  }
+}
+const btnTranslate = document.querySelector("#translate")
+const txtMessage = document.querySelector("#message")
+
+btnTranslate.addEventListener("click",() => {
+  translate(txtMessage.value)
+})
+         </script>
+
+  </body></html>

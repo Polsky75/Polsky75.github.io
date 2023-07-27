@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+      <title id="str">Ender language</title>
+    </head>
+    <body>
+      <p> Enter text: </p>
+      <p>
+      <textarea id="message">Text</textarea>
+      </p>
+      <button id = "translate">Translate</button>
+      <script>
+/*
+      <style>
+        p {
+          color: blue;
+        }
+        textarea {
+          color: blue;
+          background: aqua;
+          border-color: blue;
+        }
+        button {
+          color: blue;v
+          background: aqua;
+          border-color: blue;
+        }
+        select {
+          color: blue;
+          background: aqua;
+          border-color: blue;
+        }
+        body {
+          background: aqua;
+        }
+      </style>
+*/
+function translate(text){
+  var text1 = text
+  var linker = false
+  var english = ['C', 'G', 'H', 'J', 'S', 'U', 'c', 'g', 'h', 'j', 's', 'u']
+  var esperanto = ['Ĉ', 'Ĝ', 'Ĥ', 'Ĵ', 'Ŝ', 'Ŭ', 'ĉ', 'ĝ', 'ĥ', 'ĵ', 'ŝ', 'ŭ']
+  txtMessage.value = null
+  for (var i = 0; i < text1.length; i++) {
+    for (var j = 0; j < 26; j++) {
+      if (text1[i] == english[j]){
+        txtMessage.value += ender[j]
+        linker = true
+      }
+    }
+    if (linker == false){
+      txtMessage.value += text[i]
+    }
+    linker = false
+  }
+}
+const btnTranslate = document.querySelector("#translate")
+const txtMessage = document.querySelector("#message")
+
+btnTranslate.addEventListener("click",() => {
+  translate(txtMessage.value)
+})
+         </script>
+
+  </body></html>

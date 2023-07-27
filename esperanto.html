@@ -5,9 +5,9 @@
       <title id="str">Esperanto</title>
     </head>
     <body>
-      <p> Enter text: </p>
+      <p> Tiu ĉi retejo tradukas x-notadon de Esperanto en superskribajn signojn. Ĝi ne aspektas bone ankoraŭ, sed ĝi pliboniĝos poste! </p>
       <p>
-      <textarea id="message">Teksto</textarea>
+      <textarea id="message"></textarea>
       </p>
       <button id = "translate">Traduki</button>
       <script>
@@ -44,8 +44,9 @@ function translate(text){
   txtMessage.value = null
   i = 0
   while (i < text1.length) {
-    if (latin.include(text1[i])){
+    if (latin.includes(text1[i]) && text1[i+1] == "x"){
       txtMessage.value += esperanto[latin.indexOf(text1[i])]
+      i++
     }else{
       txtMessage.value += text1[i]
     }

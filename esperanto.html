@@ -2,14 +2,14 @@
 <html>
 <head>
      <meta charset="utf-8">
-      <title id="str">Ender language</title>
+      <title id="str">Esperanto</title>
     </head>
     <body>
       <p> Enter text: </p>
       <p>
-      <textarea id="message">Text</textarea>
+      <textarea id="message">Teksto</textarea>
       </p>
-      <button id = "translate">Translate</button>
+      <button id = "translate">Traduki</button>
       <script>
 /*
       <style>
@@ -46,9 +46,8 @@ function translate(text){
   while (i < text1.length) {
     if (latin.include(text1[i])){
       txtMessage.value += esperanto[latin.indexOf(text1[i])]
-      i++
     }else{
-      txtMessage.value += text[i]
+      txtMessage.value += text1[i]
     }
     linker = false
     i++

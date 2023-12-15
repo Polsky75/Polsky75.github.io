@@ -1,0 +1,37 @@
+body{
+    background-color: #93cf95;
+}
+
+.interface{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.w3-card{
+    text-align: center;
+}
+
+#message{
+    padding: 10px;
+    width: 50%;
+    height: 150px;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+#translate{
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #abcfac;
+    border-radius: 7px;
+    border: 2px solid black;
+    transition-duration: 0.5s;
+}
+
+#translate:hover{
+    background-color: rgb(149, 181, 150);
+    cursor: pointer;
+}

@@ -5,44 +5,20 @@
      <title id="str">Esperanto</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-     <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-green.css">
+     <link rel="stylesheet" href="./esperanto-src/esperanto.css">
 </head>
 <body bgcolor = "#93CF95">
      <div class="w3-card-4">
           <div class="w3-container w3-theme w3-card">
-               <p> Tiu ĉi retejo tradukas x-notadon de Esperanto en superskribajn signojn. Ĝi ne aspektas bone ankoraŭ, sed ĝi pliboniĝos poste! </p>
+               <p> Tiu ĉi retejo tradukas x-notadon de Esperanto en superskribajn signojn.</p>
           </div>
      </div>
-     <p>
-     <textarea id="message"></textarea>
-     </p>
-     <button id = "translate">Traduki</button>
-     <script>
-          function translate(text){
-               var text1 = text + " "
-               var linker = false
-               var latin = ['C', 'G', 'H', 'J', 'S', 'U', 'c', 'g', 'h', 'j', 's', 'u']
-               var esperanto = ['Ĉ', 'Ĝ', 'Ĥ', 'Ĵ', 'Ŝ', 'Ŭ', 'ĉ', 'ĝ', 'ĥ', 'ĵ', 'ŝ', 'ŭ']
-               txtMessage.value = null
-               i = 0
-               while (i < text1.length) {
-                    if (latin.includes(text1[i]) && text1[i+1] == "x"){
-                         txtMessage.value += esperanto[latin.indexOf(text1[i])]
-                          i++
-                    }else{
-                         txtMessage.value += text1[i]
-                    }
-               linker = false
-               i++
-               }
-          }
-          const btnTranslate = document.querySelector("#translate")
-          const txtMessage = document.querySelector("#message")
+     <br>
+     <div class="interface">
+          <textarea id="message"></textarea>
+          <button id="translate"></a>Traduki</button>
+     </div>
 
-          btnTranslate.addEventListener("click",() => {
-               translate(txtMessage.value)
-          })
-     </script>
-
+     <script src="./esperanto-src/esperanto.js"></script>
 </body>
 </html>
